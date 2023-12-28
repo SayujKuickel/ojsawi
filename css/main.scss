@@ -1,0 +1,267 @@
+@import url(./header.css);
+@import url(./footer.css);
+@import url(./category.css);
+
+@import url(./imp/reset.css);
+
+:root {
+  --color-text-50: #e9f5fc;
+  --color-text-100: #d2ebf9;
+  --color-text-200: #a5d6f3;
+  --color-text-300: #78c2ed;
+  --color-text-400: #4baee7;
+  --color-text-500: #1f99e0;
+  --color-text-600: #187bb4;
+  --color-text-700: #125c87;
+  --color-text-800: #0c3d5a;
+  --color-text-900: #061f2d;
+  --color-text-950: #030f16;
+
+  --color-background-50: #f5f5f5;
+  --color-background-100: #faf9f6;
+  --color-background-150: #f1f1f1;
+
+  --color-primary-50: #fff8e6;
+  --color-primary-100: #fef1cd;
+  --color-primary-200: #fde39b;
+  --color-primary-300: #fdd568;
+  --color-primary-400: #fcc736;
+  --color-primary-500: #fbb904;
+
+  --color-secondary-50: #fce8f4;
+  --color-secondary-100: #f9d2e9;
+  --color-secondary-200: #f3a5d4;
+  --color-secondary-300: #ed78be;
+  --color-secondary-400: #e84aa9;
+  --color-secondary-500: #e21d93;
+
+  --color-accent-500: #e0351f;
+
+  --radio-border-color: #8b8c89;
+  --radio-checked-color: #274c77;
+  --radio-hover-color: #a3cef1;
+  --radio-disabled-bg-color: #d9d9d9;
+
+  --brand-facebook: #316ff6;
+  --brand-twitter: #1da1f2;
+  --brand-instagram-yellow: #fccc63;
+  --brand-instagram-orange: #fbad50;
+  --brand-instagram-maroon: #cd486b;
+  --brand-instagram-purple: #8a3ab9;
+}
+
+// utility classes
+
+.svg-icon {
+  width: 26px;
+}
+
+.divider {
+  border: none;
+  margin-block: 4rem;
+}
+
+body {
+  background: var(--color-background-50);
+}
+
+.load-more-btn {
+  border: 0;
+  background: var(--color-background-50);
+  padding: 0.8rem 1.6rem;
+  font-weight: 500;
+  border: 1px solid grey;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  margin: 1rem 0 0 1rem;
+
+  transition: box-shadow 0.25s ease-in-out, background 0.2s ease-in-out;
+
+  &:hover {
+    background: var(--color-background-100);
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  }
+}
+// -------------------------
+
+.hero-section {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+
+  @media screen and (width < 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .category-wrapper {
+    h3 {
+      text-transform: capitalize;
+    }
+    .category-card {
+      width: 100%;
+      padding: 1rem;
+
+      ul {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+
+        @media screen and (width > 768px) {
+          flex-direction: column;
+          flex-wrap: nowrap;
+        }
+
+        li {
+          padding: 1rem 0.5rem;
+          border-radius: 12px;
+          background: var(--color-background-100);
+          border: 2px solid rgba(169, 169, 169, 0.3);
+          text-transform: capitalize;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+
+          transition: border 0.2s ease;
+
+          &:hover {
+            border: 2px solid rgba(0, 0, 0, 0.2);
+          }
+        }
+
+        @media screen and (width < 768px) {
+          li {
+            padding: 6px 12px;
+          }
+        }
+
+        input[type="radio"] {
+          box-sizing: border-box;
+          width: 20px;
+          height: 20px;
+          margin: 6px;
+          padding: 0;
+          border: 2px solid var(--radio-border-color);
+          border-radius: 50%;
+          appearance: none;
+          background-color: transparent;
+          outline: none;
+        }
+
+        input[type="radio"]:not(:disabled):checked {
+          border-color: var(--radio-checked-color);
+          background-color: var(--radio-checked-color);
+          background-clip: content-box;
+          padding: 2px;
+          background-image: radial-gradient(
+            circle,
+            var(--radio-checked-color) 0%,
+            var(--radio-checked-color) 50%,
+            transparent 60%,
+            transparent 100%
+          );
+        }
+
+        input[type="radio"]:disabled {
+          background-color: var(--radio-disabled-bg-color);
+        }
+
+        input[type="radio"]:disabled:checked {
+          background-image: radial-gradient(
+            circle,
+            var(--radio-border-color) 0%,
+            var(--radio-border-color) 50%,
+            transparent 50%,
+            transparent 100%
+          );
+        }
+      }
+    }
+  }
+
+  .carousel {
+    --__img-height: 25rem;
+
+    @media screen and (width < 650px) {
+      width: 100vw;
+    }
+
+    .carousel-item img {
+      height: var(--__img-height);
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+  }
+}
+
+.products-container {
+  margin-block: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  .product-card {
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    width: 13.5rem;
+    img {
+      transition: brightness 0.2s ease;
+
+      width: 13.5rem;
+      aspect-ratio: 1/1;
+      filter: brightness(90%);
+    }
+
+    @media screen and (width > 768px) {
+      width: 15rem;
+      img {
+        width: 13.5rem;
+      }
+    }
+
+    -webkit-box-shadow: 0px 2px 17px -3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 17px -3px rgba(0, 0, 0, 0.2);
+    background: var(--color-background-100);
+    // background: red;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 8px;
+
+    .bottom {
+      padding: 1rem;
+      text-transform: capitalize;
+
+      .prices {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .discount {
+          color: grey;
+          text-decoration: line-through;
+        }
+      }
+      .stars {
+        display: flex;
+        align-items: center;
+        font-size: x-large;
+      }
+    }
+
+    transition: all 0.25s ease-in-out;
+    &:hover {
+      -webkit-box-shadow: 0px 2px 17px -3px rgba(0, 0, 0, 0.34);
+      box-shadow: 0px 2px 17px -3px rgba(0, 0, 0, 0.34);
+
+      img {
+        filter: brightness(100%);
+      }
+    }
+  }
+}

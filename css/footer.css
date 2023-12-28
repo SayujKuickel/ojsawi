@@ -1,0 +1,73 @@
+.page-footer {
+  background-color: var(--color-background-100);
+  color: black;
+  padding: 20px;
+  text-align: center;
+  margin-top: 12rem;
+}
+.page-footer .footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.page-footer .footer-grid > div {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+  text-align: left;
+}
+.page-footer .footer-grid .footer-logo {
+  width: 60%;
+  aspect-ratio: 1;
+}
+.page-footer .footer-grid h3 {
+  text-transform: capitalize;
+}
+.page-footer .footer-grid ul li {
+  font-size: large;
+}
+.page-footer .footer-grid ul li a {
+  text-decoration: none;
+  color: grey;
+}
+.page-footer .footer-grid ul li:hover a {
+  color: black;
+}
+.page-footer .links {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  gap: 0.5rem;
+  font-size: x-large;
+}
+.page-footer .links a {
+  text-decoration: none;
+  color: black;
+  background: var(--color-background-50);
+  padding: 0.4rem 0.8rem;
+  border-radius: 50vw;
+}
+.page-footer .links a .fi-brands-facebook:hover {
+  color: var(--brand-facebook);
+}
+.page-footer .links a .fi-brands-instagram:hover {
+  background: -webkit-linear-gradient(var(--brand-instagram-yellow), var(--brand-instagram-orange), var(--brand-instagram-purple), var(--brand-instagram-maroon));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.page-footer .links a .fi-brands-twitter:hover {
+  color: var(--brand-twitter);
+}
+@media screen and (max-width: 900px) {
+  .page-footer .footer-grid {
+    justify-content: space-around;
+  }
+}
+@media screen and (max-width: 600px) {
+  .page-footer .footer-grid {
+    justify-content: center;
+  }
+  .page-footer .footer-grid > div {
+    flex: 1 0 100%;
+  }
+}/*# sourceMappingURL=footer.css.map */
